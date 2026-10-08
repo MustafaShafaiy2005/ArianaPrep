@@ -1,0 +1,2621 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>ArianaPrep — Student Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+>
+```
+
+</head>
+
+<body>
+
+<div class="dashboard-app">
+
+```
+<!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <!-- Logo -->
+        <a href="/" class="dashboard-logo" aria-label="ArianaPrep home">
+            <img
+                src="images/arianaprep-logo.png"
+                alt="ArianaPrep"
+                class="dashboard-logo-image"
+            >
+        </a>
+
+
+        <!-- Program Selector -->
+        <div class="program-selector">
+
+            <span class="program-selector-label">
+                MY PROGRAM
+            </span>
+
+            <button
+                type="button"
+                class="program-selector-main"
+                id="programSelectorButton"
+                aria-expanded="false"
+                aria-controls="programSelectorMenu"
+            >
+
+                <span
+                    class="program-selector-icon"
+                    id="programSelectorIcon"
+                >
+                    SAT
+                </span>
+
+                <span
+                    class="program-selector-text"
+                    id="programSelectorText"
+                >
+                    Digital SAT
+                </span>
+
+                <span class="program-selector-arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <!-- Program Dropdown -->
+            <div
+                class="program-selector-menu"
+                id="programSelectorMenu"
+                hidden
+            >
+
+                <button
+                    type="button"
+                    class="program-option active"
+                    data-program="sat"
+                >
+
+                    <span class="program-option-icon">
+                        SAT
+                    </span>
+
+                    <span>
+                        <strong>Digital SAT</strong>
+                        <small>
+                            Reading &amp; Writing + Math
+                        </small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="program-option"
+                    data-program="toefl"
+                >
+
+                    <span class="program-option-icon">
+                        T
+                    </span>
+
+                    <span>
+                        <strong>TOEFL iBT</strong>
+                        <small>
+                            Reading + Listening + Speaking + Writing
+                        </small>
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav" aria-label="Dashboard navigation">
+
+            <span class="nav-label">
+                STUDY
+            </span>
+
+            <a
+                href="#dashboard"
+                class="sidebar-link active"
+                data-nav="dashboard"
+            >
+                <span class="sidebar-link-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="#practice"
+                class="sidebar-link"
+                data-nav="practice"
+            >
+                <span class="sidebar-link-icon">◉</span>
+                <span>Practice</span>
+            </a>
+
+
+            <a
+                href="#tests"
+                class="sidebar-link"
+                data-nav="tests"
+            >
+                <span class="sidebar-link-icon">▣</span>
+                <span>Tests</span>
+            </a>
+
+
+            <a
+                href="#study-plan"
+                class="sidebar-link"
+                data-nav="study-plan"
+            >
+                <span class="sidebar-link-icon">✓</span>
+                <span>Study Plan</span>
+            </a>
+
+
+            <span class="nav-label nav-label-space">
+                PROGRESS
+            </span>
+
+
+            <a
+                href="#analytics"
+                class="sidebar-link"
+                data-nav="analytics"
+            >
+                <span class="sidebar-link-icon">▥</span>
+                <span>Analytics</span>
+            </a>
+
+
+            <a
+                href="#ai-tutor"
+                class="sidebar-link"
+                data-nav="ai-tutor"
+            >
+                <span class="sidebar-link-icon">✦</span>
+                <span>AI Tutor</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- Sidebar User -->
+    <div class="sidebar-bottom">
+
+        <div class="sidebar-user">
+
+            <div
+                class="sidebar-avatar"
+                id="sidebarAvatar"
+            >
+                M
+            </div>
+
+            <div class="sidebar-user-text">
+
+                <strong id="sidebarUserName">
+                    Student
+                </strong>
+
+                <span id="sidebarUserEmail">
+                    ArianaPrep student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            <span>↪</span>
+            Log out
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN AREA
+     ===================================================== -->
+
+<main class="dashboard-main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+
+        <div class="mobile-logo">
+
+            <a href="/" aria-label="ArianaPrep home">
+
+                <img
+                    src="images/arianaprep-logo.png"
+                    alt="ArianaPrep"
+                    class="dashboard-logo-image"
+                >
+
+            </a>
+
+        </div>
+
+
+        <div class="topbar-breadcrumb">
+
+            <span>ArianaPrep</span>
+
+            <span>/</span>
+
+            <strong id="breadcrumbProgram">
+                Digital SAT
+            </strong>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button
+                type="button"
+                class="notification-button"
+                aria-label="Notifications"
+            >
+                ♢
+            </button>
+
+
+            <div class="topbar-profile">
+
+                <div
+                    class="topbar-avatar"
+                    id="topbarAvatar"
+                >
+                    M
+                </div>
+
+                <div class="topbar-profile-text">
+
+                    <strong id="topbarUserName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         DASHBOARD CONTENT
+         ================================================= -->
+
+    <div class="dashboard-content">
+
+
+        <!-- =================================================
+             SAT DASHBOARD
+             ================================================= -->
+
+        <section
+            class="exam-dashboard exam-dashboard-sat"
+            id="satDashboard"
+            data-program-dashboard="sat"
+        >
+
+
+            <!-- SAT Welcome -->
+            <section
+                class="dashboard-welcome"
+                id="dashboard"
+            >
+
+                <div class="welcome-copy">
+
+                    <div class="welcome-eyebrow">
+                        DIGITAL SAT PREPARATION
+                    </div>
+
+                    <h1>
+                        Welcome back,
+                        <span id="satWelcomeName">
+                            Student
+                        </span>.
+                    </h1>
+
+                    <p>
+                        Keep building your SAT skills with focused practice,
+                        realistic tests, and a study plan designed around
+                        your progress.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-side">
+
+                    <div class="welcome-program-mark">
+                        <span class="welcome-program-mark-label">
+                            DIGITAL
+                        </span>
+
+                        <strong>
+                            SAT
+                        </strong>
+
+                        <span class="welcome-program-mark-line"></span>
+
+                        <small>
+                            ArianaPrep
+                        </small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Score -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Your SAT Progress
+                        </h2>
+
+                        <p>
+                            Your current estimated performance
+                        </p>
+                    </div>
+
+                    <a
+                        href="#analytics"
+                        class="section-link"
+                    >
+                        View analytics →
+                    </a>
+
+                </div>
+
+
+                <div class="score-focus-grid">
+
+
+                    <!-- Score Card -->
+                    <article class="score-card">
+
+                        <span class="score-label">
+                            PREDICTED SAT SCORE
+                        </span>
+
+                        <div class="score-number">
+                            1280
+                        </div>
+
+                        <div class="score-max">
+                            out of 1600
+                        </div>
+
+                        <div class="score-progress">
+                            <span></span>
+                        </div>
+
+                        <div class="score-card-footer">
+                            <span>
+                                +80 since starting
+                            </span>
+
+                            <strong>
+                                Good progress
+                            </strong>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Focus Card -->
+                    <article class="focus-card">
+
+                        <div class="focus-card-header">
+
+                            <div class="focus-card-title">
+
+                                <span class="focus-card-title-icon">
+                                    ✦
+                                </span>
+
+                                <span>
+                                    Recommended focus
+                                </span>
+
+                            </div>
+
+                            <span class="focus-status">
+                                THIS WEEK
+                            </span>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                R
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Reading &amp; Writing
+                                </strong>
+
+                                <span>
+                                    Main idea &amp; evidence
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                72%
+                            </div>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                M
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Math
+                                </strong>
+
+                                <span>
+                                    Advanced algebra
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                78%
+                            </div>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                T
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Timing
+                                </strong>
+
+                                <span>
+                                    Complete timed sets
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                64%
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Practice -->
+            <section
+                class="dashboard-section"
+                id="practice"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            SAT Practice
+                        </h2>
+
+                        <p>
+                            Choose a focused practice session
+                        </p>
+                    </div>
+
+                    <a
+                        href="#practice"
+                        class="section-link"
+                    >
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div class="practice-cards">
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            R
+                        </div>
+
+                        <h3>
+                            Reading &amp; Writing
+                        </h3>
+
+                        <p>
+                            Strengthen comprehension, grammar,
+                            vocabulary, and evidence skills.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            M
+                        </div>
+
+                        <h3>
+                            Math
+                        </h3>
+
+                        <p>
+                            Practice algebra, advanced math,
+                            problem solving, and data analysis.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            ⏱
+                        </div>
+
+                        <h3>
+                            Timed Practice
+                        </h3>
+
+                        <p>
+                            Build speed and accuracy with
+                            realistic timed question sets.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Study Plan -->
+            <section
+                class="dashboard-section"
+                id="study-plan"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Your Study Plan
+                        </h2>
+
+                        <p>
+                            Stay consistent with your weekly SAT plan
+                        </p>
+                    </div>
+
+                    <a
+                        href="#study-plan"
+                        class="section-link"
+                    >
+                        Open plan →
+                    </a>
+
+                </div>
+
+
+                <div class="plan-layout">
+
+
+                    <article class="plan-card">
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>08</strong>
+                                <span>Thu</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Reading &amp; Writing practice
+                                </strong>
+
+                                <span>
+                                    20 questions · 30 minutes
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check">
+                                ✓
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>09</strong>
+                                <span>Fri</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Advanced Math
+                                </strong>
+
+                                <span>
+                                    Algebra and functions · 25 questions
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check">
+                                ✓
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>10</strong>
+                                <span>Sat</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Full practice module
+                                </strong>
+
+                                <span>
+                                    Timed Digital SAT practice
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check pending">
+                                →
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>11</strong>
+                                <span>Sun</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Review mistakes
+                                </strong>
+
+                                <span>
+                                    Analyze incorrect answers
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check pending">
+                                →
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="plan-progress-card">
+
+                        <h3>
+                            Weekly progress
+                        </h3>
+
+                        <p>
+                            You are building a consistent study habit.
+                            Keep going.
+                        </p>
+
+                        <div class="plan-progress-number">
+                            68%
+                            <small>
+                                complete
+                            </small>
+                        </div>
+
+                        <div class="plan-progress-bar">
+                            <span></span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Tests -->
+            <section
+                class="dashboard-section"
+                id="tests"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            SAT Tests
+                        </h2>
+
+                        <p>
+                            Practice under realistic test conditions
+                        </p>
+                    </div>
+
+                    <a
+                        href="#tests"
+                        class="section-link"
+                    >
+                        View tests →
+                    </a>
+
+                </div>
+
+
+                <div class="program-grid">
+
+                    <article class="program-card">
+
+                        <div class="program-card-icon">
+                            SAT
+                        </div>
+
+                        <h3>
+                            Full-Length SAT
+                        </h3>
+
+                        <p>
+                            Complete a realistic full-length Digital SAT
+                            and measure your current performance.
+                        </p>
+
+                    </article>
+
+
+                    <article class="program-card">
+
+                        <div class="program-card-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Quick SAT Test
+                        </h3>
+
+                        <p>
+                            Complete a shorter assessment when you have
+                            limited study time.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Analytics -->
+            <section
+                class="dashboard-section"
+                id="analytics"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            SAT Analytics
+                        </h2>
+
+                        <p>
+                            Understand how your performance is changing
+                        </p>
+                    </div>
+
+                    <a
+                        href="#analytics"
+                        class="section-link"
+                    >
+                        Full analytics →
+                    </a>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+
+                    <article class="analytics-card">
+
+                        <div class="analytics-bars">
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W1</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W2</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W3</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W4</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W5</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W6</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="analytics-card">
+
+                        <div class="analytics-summary">
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    78%
+                                </strong>
+
+                                <span>
+                                    Accuracy
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    12h
+                                </strong>
+
+                                <span>
+                                    Study time
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    420
+                                </strong>
+
+                                <span>
+                                    Questions
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    +80
+                                </strong>
+
+                                <span>
+                                    Score growth
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT AI Tutor -->
+            <section
+                class="dashboard-section"
+                id="ai-tutor"
+            >
+
+                <div class="ai-tutor-section">
+
+                    <div class="ai-tutor-content">
+
+                        <span class="ai-tutor-badge">
+                            ✦ ARIANAPREP AI
+                        </span>
+
+                        <h2>
+                            Your SAT AI Tutor
+                        </h2>
+
+                        <p>
+                            Ask questions, review difficult problems,
+                            understand mistakes, or get step-by-step
+                            explanations while you study.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="ai-tutor-button"
+                        >
+                            Open AI Tutor →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SAT Recent Activity -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Recent SAT Activity
+                        </h2>
+
+                        <p>
+                            Your latest study activity
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            M
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                Math practice completed
+                            </strong>
+
+                            <span>
+                                20 questions · Today
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            85%
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            R
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                Reading &amp; Writing set completed
+                            </strong>
+
+                            <span>
+                                25 questions · Yesterday
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            76%
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            ▣
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                SAT practice test completed
+                            </strong>
+
+                            <span>
+                                Full assessment · 2 days ago
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            1280
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TOEFL DASHBOARD
+             ================================================= -->
+
+        <section
+            class="exam-dashboard exam-dashboard-toefl"
+            id="toeflDashboard"
+            data-program-dashboard="toefl"
+            hidden
+        >
+
+
+            <!-- TOEFL Welcome -->
+            <section class="dashboard-welcome">
+
+                <div class="welcome-copy">
+
+                    <div class="welcome-eyebrow">
+                        TOEFL iBT PREPARATION
+                    </div>
+
+                    <h1>
+                        Welcome back,
+                        <span id="toeflWelcomeName">
+                            Student
+                        </span>.
+                    </h1>
+
+                    <p>
+                        Improve your English skills with targeted TOEFL
+                        practice, realistic test tasks, and focused
+                        preparation for all four sections.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-side">
+
+                    <div class="welcome-program-mark">
+
+                        <span class="welcome-program-mark-label">
+                            ENGLISH
+                        </span>
+
+                        <strong>
+                            TOEFL
+                        </strong>
+
+                        <span class="welcome-program-mark-line"></span>
+
+                        <small>
+                            iBT Preparation
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Progress -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Your TOEFL Progress
+                        </h2>
+
+                        <p>
+                            Your current estimated performance
+                        </p>
+                    </div>
+
+                    <a
+                        href="#analytics"
+                        class="section-link"
+                    >
+                        View analytics →
+                    </a>
+
+                </div>
+
+
+                <div class="score-focus-grid">
+
+
+                    <!-- TOEFL Score -->
+                    <article class="score-card">
+
+                        <span class="score-label">
+                            ESTIMATED TOEFL SCORE
+                        </span>
+
+                        <div class="score-number">
+                            88
+                        </div>
+
+                        <div class="score-max">
+                            out of 120
+                        </div>
+
+                        <div class="score-progress">
+                            <span></span>
+                        </div>
+
+                        <div class="score-card-footer">
+                            <span>
+                                +6 since starting
+                            </span>
+
+                            <strong>
+                                Improving
+                            </strong>
+                        </div>
+
+                    </article>
+
+
+                    <!-- TOEFL Focus -->
+                    <article class="focus-card">
+
+                        <div class="focus-card-header">
+
+                            <div class="focus-card-title">
+
+                                <span class="focus-card-title-icon">
+                                    ✦
+                                </span>
+
+                                <span>
+                                    Recommended focus
+                                </span>
+
+                            </div>
+
+                            <span class="focus-status">
+                                THIS WEEK
+                            </span>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                R
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Reading
+                                </strong>
+
+                                <span>
+                                    Vocabulary &amp; inference
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                76%
+                            </div>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                L
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Listening
+                                </strong>
+
+                                <span>
+                                    Lecture comprehension
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                71%
+                            </div>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                S
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Speaking
+                                </strong>
+
+                                <span>
+                                    Response organization
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                68%
+                            </div>
+
+                        </div>
+
+
+                        <div class="focus-item">
+
+                            <div class="focus-item-icon">
+                                W
+                            </div>
+
+                            <div class="focus-item-text">
+
+                                <strong>
+                                    Writing
+                                </strong>
+
+                                <span>
+                                    Development &amp; clarity
+                                </span>
+
+                            </div>
+
+                            <div class="focus-item-score">
+                                74%
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Practice -->
+            <section
+                class="dashboard-section"
+                id="practice"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            TOEFL Practice
+                        </h2>
+
+                        <p>
+                            Practice each TOEFL iBT skill independently
+                        </p>
+                    </div>
+
+                    <a
+                        href="#practice"
+                        class="section-link"
+                    >
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div class="practice-cards">
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            R
+                        </div>
+
+                        <h3>
+                            Reading
+                        </h3>
+
+                        <p>
+                            Build comprehension, vocabulary,
+                            inference, and academic reading skills.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            L
+                        </div>
+
+                        <h3>
+                            Listening
+                        </h3>
+
+                        <p>
+                            Improve lecture and conversation
+                            comprehension with focused tasks.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            S
+                        </div>
+
+                        <h3>
+                            Speaking
+                        </h3>
+
+                        <p>
+                            Practice structured responses and
+                            improve delivery and organization.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            W
+                        </div>
+
+                        <h3>
+                            Writing
+                        </h3>
+
+                        <p>
+                            Develop clear academic responses with
+                            better organization and language.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            T
+                        </div>
+
+                        <h3>
+                            Integrated Tasks
+                        </h3>
+
+                        <p>
+                            Combine multiple English skills using
+                            realistic TOEFL-style activities.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+
+                    <article class="practice-card">
+
+                        <div class="practice-icon">
+                            ⏱
+                        </div>
+
+                        <h3>
+                            Timed Practice
+                        </h3>
+
+                        <p>
+                            Build speed and confidence with
+                            timed TOEFL practice sessions.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="practice-card-button"
+                        >
+                            Start practice →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Study Plan -->
+            <section
+                class="dashboard-section"
+                id="study-plan"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Your TOEFL Study Plan
+                        </h2>
+
+                        <p>
+                            Build balanced progress across all four skills
+                        </p>
+                    </div>
+
+                    <a
+                        href="#study-plan"
+                        class="section-link"
+                    >
+                        Open plan →
+                    </a>
+
+                </div>
+
+
+                <div class="plan-layout">
+
+
+                    <article class="plan-card">
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>08</strong>
+                                <span>Thu</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Reading practice
+                                </strong>
+
+                                <span>
+                                    Academic passage · 30 minutes
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check">
+                                ✓
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>09</strong>
+                                <span>Fri</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Listening practice
+                                </strong>
+
+                                <span>
+                                    Lecture task · 25 minutes
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check">
+                                ✓
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>10</strong>
+                                <span>Sat</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Speaking practice
+                                </strong>
+
+                                <span>
+                                    4 speaking responses
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check pending">
+                                →
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-day">
+
+                            <div class="plan-date">
+                                <strong>11</strong>
+                                <span>Sun</span>
+                            </div>
+
+                            <div class="plan-day-text">
+
+                                <strong>
+                                    Writing practice
+                                </strong>
+
+                                <span>
+                                    Integrated writing task
+                                </span>
+
+                            </div>
+
+                            <div class="plan-check pending">
+                                →
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="plan-progress-card">
+
+                        <h3>
+                            Weekly progress
+                        </h3>
+
+                        <p>
+                            Your preparation is moving forward.
+                            Keep your four skills balanced.
+                        </p>
+
+                        <div class="plan-progress-number">
+                            61%
+                            <small>
+                                complete
+                            </small>
+                        </div>
+
+                        <div class="plan-progress-bar">
+                            <span></span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Tests -->
+            <section
+                class="dashboard-section"
+                id="tests"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            TOEFL Tests
+                        </h2>
+
+                        <p>
+                            Practice complete TOEFL-style assessments
+                        </p>
+                    </div>
+
+                    <a
+                        href="#tests"
+                        class="section-link"
+                    >
+                        View tests →
+                    </a>
+
+                </div>
+
+
+                <div class="program-grid">
+
+                    <article class="program-card toefl">
+
+                        <div class="program-card-icon">
+                            T
+                        </div>
+
+                        <h3>
+                            Full TOEFL Practice
+                        </h3>
+
+                        <p>
+                            Complete a realistic TOEFL-style assessment
+                            covering all four language skills.
+                        </p>
+
+                    </article>
+
+
+                    <article class="program-card toefl">
+
+                        <div class="program-card-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Quick TOEFL Test
+                        </h3>
+
+                        <p>
+                            Take a shorter assessment to quickly
+                            measure your current level.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Analytics -->
+            <section
+                class="dashboard-section"
+                id="analytics"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            TOEFL Analytics
+                        </h2>
+
+                        <p>
+                            Track your performance across all four skills
+                        </p>
+                    </div>
+
+                    <a
+                        href="#analytics"
+                        class="section-link"
+                    >
+                        Full analytics →
+                    </a>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+
+                    <article class="analytics-card">
+
+                        <div class="analytics-bars">
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W1</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W2</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W3</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W4</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W5</span>
+                            </div>
+
+                            <div class="analytics-bar-column">
+                                <div class="analytics-bar"></div>
+                                <span>W6</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="analytics-card">
+
+                        <div class="analytics-summary">
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    73%
+                                </strong>
+
+                                <span>
+                                    Reading
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    71%
+                                </strong>
+
+                                <span>
+                                    Listening
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    68%
+                                </strong>
+
+                                <span>
+                                    Speaking
+                                </span>
+
+                            </div>
+
+
+                            <div class="analytics-stat">
+
+                                <strong>
+                                    74%
+                                </strong>
+
+                                <span>
+                                    Writing
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL AI Tutor -->
+            <section
+                class="dashboard-section"
+                id="ai-tutor"
+            >
+
+                <div class="ai-tutor-section">
+
+                    <div class="ai-tutor-content">
+
+                        <span class="ai-tutor-badge">
+                            ✦ ARIANAPREP AI
+                        </span>
+
+                        <h2>
+                            Your TOEFL AI Tutor
+                        </h2>
+
+                        <p>
+                            Get explanations, practice conversations,
+                            writing feedback, speaking guidance, and
+                            personalized English study support.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="ai-tutor-button"
+                        >
+                            Open AI Tutor →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TOEFL Recent Activity -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>
+                            Recent TOEFL Activity
+                        </h2>
+
+                        <p>
+                            Your latest TOEFL preparation activity
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            R
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                Reading practice completed
+                            </strong>
+
+                            <span>
+                                Academic passage · Today
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            82%
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            L
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                Listening practice completed
+                            </strong>
+
+                            <span>
+                                Lecture task · Yesterday
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            78%
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            T
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>
+                                TOEFL practice test completed
+                            </strong>
+
+                            <span>
+                                Full assessment · 2 days ago
+                            </span>
+
+                        </div>
+
+                        <div class="activity-result">
+                            88
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+
+        <span>
+            © 2026 ArianaPrep
+        </span>
+
+        <span>
+            Digital SAT &amp; TOEFL iBT Preparation
+        </span>
+
+    </footer>
+
+</main>
+
+
+
+<!-- =====================================================
+     MOBILE NAVIGATION
+     ===================================================== -->
+
+<nav
+    class="mobile-nav"
+    aria-label="Mobile dashboard navigation"
+>
+
+    <a
+        href="#dashboard"
+        class="mobile-nav-item active"
+    >
+        <span>⌂</span>
+        <small>Home</small>
+    </a>
+
+
+    <a
+        href="#practice"
+        class="mobile-nav-item"
+    >
+        <span>◉</span>
+        <small>Practice</small>
+    </a>
+
+
+    <a
+        href="#tests"
+        class="mobile-nav-item"
+    >
+        <span>▣</span>
+        <small>Tests</small>
+    </a>
+
+
+    <a
+        href="#analytics"
+        class="mobile-nav-item"
+    >
+        <span>▥</span>
+        <small>Progress</small>
+    </a>
+
+</nav>
+```
+
+</div>
+
+<!-- =========================================================
+     PROGRAM SWITCHING
+     ========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const programButton =
+        document.getElementById("programSelectorButton");
+
+    const programMenu =
+        document.getElementById("programSelectorMenu");
+
+    const programOptions =
+        document.querySelectorAll(".program-option");
+
+    const programIcon =
+        document.getElementById("programSelectorIcon");
+
+    const programText =
+        document.getElementById("programSelectorText");
+
+    const breadcrumbProgram =
+        document.getElementById("breadcrumbProgram");
+
+    const satDashboard =
+        document.getElementById("satDashboard");
+
+    const toeflDashboard =
+        document.getElementById("toeflDashboard");
+
+
+    function setProgram(program) {
+
+        const isTOEFL = program === "toefl";
+
+
+        /* Show only selected program */
+
+        satDashboard.hidden = isTOEFL;
+        toeflDashboard.hidden = !isTOEFL;
+
+
+        /* Update selector */
+
+        if (isTOEFL) {
+
+            programIcon.textContent = "T";
+            programIcon.classList.add("toefl-mark");
+
+            programText.textContent = "TOEFL iBT";
+
+            breadcrumbProgram.textContent = "TOEFL iBT";
+
+        } else {
+
+            programIcon.textContent = "SAT";
+            programIcon.classList.remove("toefl-mark");
+
+            programText.textContent = "Digital SAT";
+
+            breadcrumbProgram.textContent = "Digital SAT";
+
+        }
+
+
+        /* Update dropdown */
+
+        programOptions.forEach(function (option) {
+
+            option.classList.toggle(
+                "active",
+                option.dataset.program === program
+            );
+
+        });
+
+
+        /* Update welcome names */
+
+        const sidebarName =
+            document.getElementById("sidebarUserName");
+
+        const name =
+            sidebarName
+                ? sidebarName.textContent
+                : "Student";
+
+
+        const satWelcomeName =
+            document.getElementById("satWelcomeName");
+
+        const toeflWelcomeName =
+            document.getElementById("toeflWelcomeName");
+
+
+        if (satWelcomeName) {
+            satWelcomeName.textContent = name;
+        }
+
+        if (toeflWelcomeName) {
+            toeflWelcomeName.textContent = name;
+        }
+
+
+        /* Save selected program */
+
+        localStorage.setItem(
+            "arianaprep_program",
+            program
+        );
+
+    }
+
+
+    /* Open / close program menu */
+
+    programButton.addEventListener(
+        "click",
+        function () {
+
+            const isOpen =
+                !programMenu.hidden;
+
+            programMenu.hidden = isOpen;
+
+            programButton.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        }
+    );
+
+
+    /* Select program */
+
+    programOptions.forEach(function (option) {
+
+        option.addEventListener(
+            "click",
+            function () {
+
+                const selectedProgram =
+                    option.dataset.program;
+
+                setProgram(selectedProgram);
+
+                programMenu.hidden = true;
+
+                programButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* Close menu when clicking elsewhere */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !programButton.contains(event.target) &&
+                !programMenu.contains(event.target)
+            ) {
+
+                programMenu.hidden = true;
+
+                programButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* Restore previous selection */
+
+    const savedProgram =
+        localStorage.getItem("arianaprep_program");
+
+    setProgram(
+        savedProgram === "toefl"
+            ? "toefl"
+            : "sat"
+    );
+
+});
+
+</script>
+
+<!-- =========================================================
+     AUTHENTICATION / USER DATA
+     ========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/me",
+                    {
+                        credentials: "include"
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                window.location.href = "/login";
+
+                return;
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            if (data.user) {
+
+                const name =
+                    data.user.name || "Student";
+
+                const email =
+                    data.user.email ||
+                    "ArianaPrep student";
+
+
+                /* Sidebar */
+
+                const sidebarName =
+                    document.getElementById(
+                        "sidebarUserName"
+                    );
+
+                const sidebarEmail =
+                    document.getElementById(
+                        "sidebarUserEmail"
+                    );
+
+
+                if (sidebarName) {
+                    sidebarName.textContent = name;
+                }
+
+
+                if (sidebarEmail) {
+                    sidebarEmail.textContent = email;
+                }
+
+
+                /* Topbar */
+
+                const topbarName =
+                    document.getElementById(
+                        "topbarUserName"
+                    );
+
+
+                if (topbarName) {
+                    topbarName.textContent = name;
+                }
+
+
+                /* Avatar initials */
+
+                const firstLetter =
+                    name
+                        .trim()
+                        .charAt(0)
+                        .toUpperCase() || "M";
+
+
+                const sidebarAvatar =
+                    document.getElementById(
+                        "sidebarAvatar"
+                    );
+
+                const topbarAvatar =
+                    document.getElementById(
+                        "topbarAvatar"
+                    );
+
+
+                if (sidebarAvatar) {
+                    sidebarAvatar.textContent =
+                        firstLetter;
+                }
+
+
+                if (topbarAvatar) {
+                    topbarAvatar.textContent =
+                        firstLetter;
+                }
+
+
+                /* Welcome names */
+
+                const satWelcomeName =
+                    document.getElementById(
+                        "satWelcomeName"
+                    );
+
+                const toeflWelcomeName =
+                    document.getElementById(
+                        "toeflWelcomeName"
+                    );
+
+
+                if (satWelcomeName) {
+                    satWelcomeName.textContent =
+                        name;
+                }
+
+
+                if (toeflWelcomeName) {
+                    toeflWelcomeName.textContent =
+                        name;
+                }
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Could not load user:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+
+if (logoutButton) {
+
+    logoutButton.addEventListener(
+        "click",
+        async function () {
+
+            try {
+
+                await fetch(
+                    "/api/logout",
+                    {
+                        method: "POST",
+                        credentials: "include"
+                    }
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Logout error:",
+                    error
+                );
+
+            }
+
+
+            localStorage.removeItem(
+                "arianaprep_program"
+            );
+
+
+            window.location.href =
+                "/login";
+
+        }
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ArianaPrep — Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="/dashboard" class="brand">
+                <img
+                    src="./images/arianaprep-logo.png"
+                    alt="ArianaPrep"
+                    class="brand-logo"
+                >
+            </a>
+
+
+            <!-- SUBJECT SWITCHER -->
+
+            <div class="subject-switcher">
+
+                <button class="subject-switch active">
+                    SAT
+                </button>
+
+                <button class="subject-switch">
+                    TOEFL
+                </button>
+
+            </div>
+
+
+            <!-- MAIN NAVIGATION -->
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">
+                    MAIN
+                </p>
+
+                <a href="/dashboard" class="nav-item active">
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+                </a>
+
+                <a href="#ai-tutors" class="nav-item">
+                    <span class="nav-icon">✦</span>
+                    <span>AI Tutors</span>
+                </a>
+
+                <a href="#study-plan" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Study Planner</span>
+                </a>
+
+                <a href="#analytics" class="nav-item">
+                    <span class="nav-icon">▥</span>
+                    <span>Analytics</span>
+                </a>
+
+                <a href="#mistakes" class="nav-item">
+                    <span class="nav-icon">◆</span>
+                    <span>Saved &amp; Mistakes</span>
+                </a>
+
+
+                <p class="nav-label nav-label-spaced">
+                    DIGITAL SAT
+                </p>
+
+                <a href="#sat-reading" class="nav-item">
+                    <span class="nav-icon">A</span>
+                    <span>Reading &amp; Writing</span>
+                </a>
+
+                <a href="#sat-math" class="nav-item">
+                    <span class="nav-icon">+</span>
+                    <span>Math</span>
+                </a>
+
+
+                <p class="nav-label nav-label-spaced">
+                    TOEFL iBT
+                </p>
+
+                <a href="#toefl-reading" class="nav-item">
+                    <span class="nav-icon">R</span>
+                    <span>Reading</span>
+                </a>
+
+                <a href="#toefl-listening" class="nav-item">
+                    <span class="nav-icon">L</span>
+                    <span>Listening</span>
+                </a>
+
+                <a href="#toefl-speaking" class="nav-item">
+                    <span class="nav-icon">S</span>
+                    <span>Speaking</span>
+                </a>
+
+                <a href="#toefl-writing" class="nav-item">
+                    <span class="nav-icon">W</span>
+                    <span>Writing</span>
+                </a>
+
+
+                <p class="nav-label nav-label-spaced">
+                    PRACTICE
+                </p>
+
+                <a href="#question-bank" class="nav-item">
+                    <span class="nav-icon">?</span>
+                    <span>Question Bank</span>
+                </a>
+
+                <a href="#tests" class="nav-item">
+                    <span class="nav-icon">▤</span>
+                    <span>Full-Length Tests</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+                <div class="user-info">
+                    <strong id="sidebarStudentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        ArianaPrep student
+                    </span>
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Log out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN APPLICATION
+    ========================== -->
+
+    <div class="main-area">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="mobile-brand">
+
+                <a href="/dashboard">
+                    <img
+                        src="./images/arianaprep-logo.png"
+                        alt="ArianaPrep"
+                    >
+                </a>
+
+            </div>
+
+
+            <div class="header-spacer"></div>
+
+
+            <div class="header-actions">
+
+                <button class="header-icon" title="Notifications">
+                    ♢
+                    <span class="notification-dot"></span>
+                </button>
+
+                <button class="header-icon" title="Settings">
+                    ⚙
+                </button>
+
+                <div class="header-profile">
+
+                    <div class="header-avatar">
+                        A
+                    </div>
+
+                    <span id="headerStudentName">
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="dashboard-content">
+
+
+            <!-- =========================
+                 WELCOME HERO
+            ========================== -->
+
+            <section class="welcome-hero">
+
+                <div class="welcome-copy">
+
+                    <span class="small-label">
+                        YOUR ARIANAPREP DASHBOARD
+                    </span>
+
+                    <h1>
+                        Good to see you,
+                        <span id="studentName">Student</span>.
+                    </h1>
+
+                    <p>
+                        Let's continue building your SAT and TOEFL
+                        skills with focused practice and your AI tutors.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#study-plan"
+                            class="primary-action"
+                        >
+                            Create my study plan
+                            <span>→</span>
+                        </a>
+
+                        <a
+                            href="#ai-tutors"
+                            class="secondary-action"
+                        >
+                            Start practicing
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="welcome-art">
+
+                    <div class="art-glow"></div>
+
+                    <img
+                        src="./images/hero-creatures.png"
+                        alt="ArianaPrep educational creatures"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 QUICK STATS
+            ========================== -->
+
+            <section
+                class="analytics-section"
+                id="analytics"
+            >
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR PROGRESS
+                        </span>
+
+                        <h2>
+                            Analytics
+                        </h2>
+
+                    </div>
+
+                    <button class="outline-button">
+                        View all analytics
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+                            <span>
+                                QUESTIONS ATTEMPTED
+                            </span>
+
+                            <div class="stat-icon purple-icon">
+                                ?
+                            </div>
+                        </div>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Complete your first practice set.
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+                            <span>
+                                CURRENT ACCURACY
+                            </span>
+
+                            <div class="stat-icon blue-icon">
+                                %
+                            </div>
+                        </div>
+
+                        <strong>
+                            0%
+                        </strong>
+
+                        <p>
+                            Your accuracy will appear here.
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+                            <span>
+                                SAVED QUESTIONS
+                            </span>
+
+                            <div class="stat-icon gold-icon">
+                                ★
+                            </div>
+                        </div>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Questions saved for later review.
+                        </p>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+                            <span>
+                                STUDY STREAK
+                            </span>
+
+                            <div class="stat-icon purple-icon">
+                                ↗
+                            </div>
+                        </div>
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <p>
+                            Days of consistent preparation.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 STUDY PLAN
+            ========================== -->
+
+            <section
+                class="study-plan-section"
+                id="study-plan"
+            >
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR NEXT STEP
+                        </span>
+
+                        <h2>
+                            My Study Plan
+                        </h2>
+
+                    </div>
+
+                    <button class="outline-button">
+                        Open planner
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <div class="study-plan-card">
+
+                    <div class="study-plan-copy">
+
+                        <div class="plan-badge">
+                            START HERE
+                        </div>
+
+                        <h3>
+                            Build your personalized
+                            preparation plan.
+                        </h3>
+
+                        <p>
+                            Tell ArianaPrep what exam you're preparing for,
+                            when you plan to take it, and how much time you
+                            can study. Your study plan can then guide your
+                            daily practice.
+                        </p>
+
+                        <button class="primary-action">
+                            Create study plan
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="study-plan-visual">
+
+                        <div class="plan-circle circle-one"></div>
+                        <div class="plan-circle circle-two"></div>
+                        <div class="plan-circle circle-three"></div>
+
+                        <div class="plan-center">
+                            <span>
+                                AI
+                            </span>
+                            <strong>
+                                PLAN
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 AI TUTORS
+            ========================== -->
+
+            <section
+                class="tutors-section"
+                id="ai-tutors"
+            >
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <span class="small-label">
+                            ARIANAPREP AI
+                        </span>
+
+                        <h2>
+                            Your AI Tutors
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+                        Choose a skill and start practicing with
+                        an AI tutor designed specifically for that exam.
+                    </p>
+
+                </div>
+
+
+                <div class="tutor-grid">
+
+
+                    <!-- SAT READING -->
+
+                    <article
+                        class="tutor-card sat-card"
+                        id="sat-reading"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                01
+                            </span>
+
+                            <span class="subject-tag">
+                                DIGITAL SAT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/sat-creature.png"
+                                alt="Digital SAT tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Reading &amp;
+                                Writing
+                            </h3>
+
+                            <p>
+                                Practice grammar, vocabulary,
+                                passages, evidence, rhetoric,
+                                and reading comprehension.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SAT MATH -->
+
+                    <article
+                        class="tutor-card sat-math-card"
+                        id="sat-math"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                02
+                            </span>
+
+                            <span class="subject-tag">
+                                DIGITAL SAT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/sat-creature.png"
+                                alt="Digital SAT Math tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Math
+                            </h3>
+
+                            <p>
+                                Work through algebra, advanced math,
+                                data analysis, geometry, and Desmos
+                                strategies.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TOEFL READING -->
+
+                    <article
+                        class="tutor-card toefl-card"
+                        id="toefl-reading"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                03
+                            </span>
+
+                            <span class="subject-tag">
+                                TOEFL iBT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/toefl-creature.png"
+                                alt="TOEFL Reading tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Reading
+                            </h3>
+
+                            <p>
+                                Improve comprehension, vocabulary,
+                                inference, organization, and timing.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TOEFL LISTENING -->
+
+                    <article
+                        class="tutor-card toefl-card"
+                        id="toefl-listening"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                04
+                            </span>
+
+                            <span class="subject-tag">
+                                TOEFL iBT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/toefl-creature.png"
+                                alt="TOEFL Listening tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Listening
+                            </h3>
+
+                            <p>
+                                Practice lectures and conversations,
+                                note-taking, details, purpose,
+                                and inference.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TOEFL SPEAKING -->
+
+                    <article
+                        class="tutor-card toefl-card"
+                        id="toefl-speaking"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                05
+                            </span>
+
+                            <span class="subject-tag">
+                                TOEFL iBT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/toefl-creature.png"
+                                alt="TOEFL Speaking tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Speaking
+                            </h3>
+
+                            <p>
+                                Practice responses and receive AI
+                                feedback on delivery, language,
+                                organization, and development.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TOEFL WRITING -->
+
+                    <article
+                        class="tutor-card toefl-card"
+                        id="toefl-writing"
+                    >
+
+                        <div class="tutor-card-header">
+
+                            <span class="tutor-number">
+                                06
+                            </span>
+
+                            <span class="subject-tag">
+                                TOEFL iBT
+                            </span>
+
+                        </div>
+
+
+                        <div class="tutor-image-wrap">
+
+                            <img
+                                src="./images/toefl-creature.png"
+                                alt="TOEFL Writing tutor creature"
+                            >
+
+                        </div>
+
+
+                        <div class="tutor-card-content">
+
+                            <h3>
+                                Writing
+                            </h3>
+
+                            <p>
+                                Get detailed feedback on organization,
+                                development, grammar, vocabulary,
+                                and clarity.
+                            </p>
+
+                            <button class="tutor-button">
+                                Start tutor
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PRACTICE HUB
+            ========================== -->
+
+            <section class="practice-section">
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <span class="small-label">
+                            PRACTICE
+                        </span>
+
+                        <h2>
+                            Keep practicing.
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+                        Build consistency with targeted questions,
+                        full-length tests, and mistake review.
+                    </p>
+
+                </div>
+
+
+                <div class="practice-grid">
+
+
+                    <article
+                        class="practice-card purple-practice"
+                        id="question-bank"
+                    >
+
+                        <span class="practice-icon">
+                            ?
+                        </span>
+
+                        <div>
+
+                            <span class="practice-label">
+                                QUESTION BANK
+                            </span>
+
+                            <h3>
+                                Practice questions
+                            </h3>
+
+                            <p>
+                                Choose a subject and work through
+                                targeted practice.
+                            </p>
+
+                        </div>
+
+                        <button>
+                            Open question bank →
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="practice-card blue-practice"
+                        id="tests"
+                    >
+
+                        <span class="practice-icon">
+                            ▤
+                        </span>
+
+                        <div>
+
+                            <span class="practice-label">
+                                FULL-LENGTH TESTS
+                            </span>
+
+                            <h3>
+                                Test yourself
+                            </h3>
+
+                            <p>
+                                Simulate exam conditions and
+                                measure your progress.
+                            </p>
+
+                        </div>
+
+                        <button>
+                            View tests →
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="practice-card gold-practice"
+                        id="mistakes"
+                    >
+
+                        <span class="practice-icon">
+                            ★
+                        </span>
+
+                        <div>
+
+                            <span class="practice-label">
+                                SAVED &amp; MISTAKES
+                            </span>
+
+                            <h3>
+                                Review what matters
+                            </h3>
+
+                            <p>
+                                Revisit questions you saved or
+                                answered incorrectly.
+                            </p>
+
+                        </div>
+
+                        <button>
+                            Review questions →
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 AI STUDY COACH
+            ========================== -->
+
+            <section class="coach-section">
+
+                <div class="coach-copy">
+
+                    <span class="small-label">
+                        ARIANAPREP AI
+                    </span>
+
+                    <h2>
+                        Your AI
+                        <span>Study Coach.</span>
+                    </h2>
+
+                    <p>
+                        As you practice, ArianaPrep can use your
+                        performance to help identify what you should
+                        focus on next.
+                    </p>
+
+                    <button class="primary-action">
+                        Open Study Coach
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <div class="coach-panel">
+
+                    <div class="coach-header">
+
+                        <div>
+                            <span class="coach-label">
+                                AI ANALYSIS
+                            </span>
+
+                            <h3>
+                                Your preparation
+                            </h3>
+                        </div>
+
+                        <span class="coach-status">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="coach-row">
+
+                        <span>
+                            SAT Math
+                        </span>
+
+                        <strong>
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coach-row">
+
+                        <span>
+                            SAT Reading &amp; Writing
+                        </span>
+
+                        <strong>
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coach-row">
+
+                        <span>
+                            TOEFL
+                        </span>
+
+                        <strong>
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coach-message">
+
+                        <span>
+                            NEXT RECOMMENDATION
+                        </span>
+
+                        <p>
+                            Complete some practice questions so
+                            your AI Study Coach can begin analyzing
+                            your performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CONTINUE
+            ========================== -->
+
+            <section class="continue-card">
+
+                <div>
+
+                    <span class="small-label">
+                        KEEP GOING
+                    </span>
+
+                    <h2>
+                        Your next practice session is waiting.
+                    </h2>
+
+                    <p>
+                        Start with a skill and let ArianaPrep
+                        help you move forward.
+                    </p>
+
+                </div>
+
+                <button class="primary-action">
+                    Start Practice
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <img
+                src="./images/arianaprep-logo.png"
+                alt="ArianaPrep"
+            >
+
+            <p>
+                AI-powered preparation for the Digital SAT and TOEFL iBT.
+            </p>
+
+            <span>
+                Created by Mustafa Shafaiy
+            </span>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
