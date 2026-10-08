@@ -1,164 +1,1053 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Search Console Verification Tag -->
-    <meta name="google-site-verification" content="a5apJ2iF-7JHBCbOLQ_YykbXS1f9xCWeWZhVwh6sEBQ" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ArianaPrep — Digital SAT and TOEFL iBT preparation with personalized practice, study plans, analytics, and AI-powered tutoring."
+    >
+
+    <meta
+        name="theme-color"
+        content="#4b2568"
+    >
 
     <title>ArianaPrep — Digital SAT & TOEFL iBT Preparation</title>
 
-    <link rel="stylesheet" href="index.css">
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
+
+
 <body>
 
-    <!-- =========================
+    <!-- =====================================================
          HEADER
-    ========================== -->
-    <header class="site-header">
-        <div class="container header-inner">
+         ===================================================== -->
 
-            <a href="#home" class="logo">
-                <img src="images/arianaprep-logo.png" alt="ArianaPrep" class="logo-image">
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="/"
+                class="brand"
+                aria-label="ArianaPrep home"
+            >
+                <img
+                    src="images/arianaprep-logo.png"
+                    alt="ArianaPrep"
+                    class="brand-logo"
+                >
             </a>
 
-            <nav class="main-nav">
-                <a href="#home">Home</a>
-                <a href="#programs">Programs</a>
-                <a href="#resources">Resources</a>
-                <a href="#about">About</a>
+
+            <nav
+                class="main-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="#programs">
+                    Programs
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
             </nav>
 
+
             <div class="header-actions">
-                <a href="/login" class="login-link">Log in</a>
-                <a href="/register" class="header-button">Get Started</a>
+
+                <a
+                    href="/login"
+                    class="header-login"
+                >
+                    Log in
+                </a>
+
+                <a
+                    href="/register"
+                    class="header-signup"
+                >
+                    Get Started
+                </a>
+
             </div>
 
+
+            <button
+                type="button"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
+
     </header>
+
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+         ===================================================== -->
+
+    <div
+        class="mobile-navigation"
+        id="mobileNavigation"
+        aria-hidden="true"
+    >
+
+        <a href="#programs">
+            Programs
+        </a>
+
+        <a href="#how-it-works">
+            How It Works
+        </a>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <div class="mobile-navigation-actions">
+
+            <a href="/login">
+                Log in
+            </a>
+
+            <a href="/register">
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
 
     <main>
 
-        <!-- =========================
+
+        <!-- =================================================
              HERO
-        ========================== -->
-        <section class="hero" id="home">
-            <div class="container hero-grid">
+             ================================================= -->
+
+        <section class="hero">
+
+            <div class="hero-background-shape hero-shape-one"></div>
+            <div class="hero-background-shape hero-shape-two"></div>
+            <div class="hero-background-shape hero-shape-three"></div>
+
+
+            <div class="hero-container">
+
                 <div class="hero-content">
-                    <div class="eyebrow">
+
+                    <div class="hero-eyebrow">
                         <span class="eyebrow-dot"></span>
-                        SMARTER TEST PREPARATION
+                        Smarter preparation. Better progress.
                     </div>
+
+
                     <h1>
-                        Prepare with purpose.
-                        <span>Achieve your goal.</span>
+                        Prepare with
+                        <span>purpose.</span>
+                        <br>
+                        Learn with confidence.
                     </h1>
+
+
                     <p class="hero-description">
-                        ArianaPrep helps students prepare for the Digital SAT
-                        and TOEFL iBT with structured practice, personalized
-                        learning, and AI-powered study support.
+                        ArianaPrep brings Digital SAT and TOEFL iBT
+                        preparation into one focused learning platform —
+                        with practice, personalized study plans,
+                        progress analytics, and an AI tutor.
                     </p>
+
+
                     <div class="hero-actions">
-                        <a href="/register" class="primary-button">
-                            Start Preparing
+
+                        <a
+                            href="/register"
+                            class="primary-button"
+                        >
+                            Start Learning
                             <span>→</span>
                         </a>
-                        <a href="#programs" class="secondary-button">
+
+                        <a
+                            href="#programs"
+                            class="secondary-button"
+                        >
                             Explore Programs
                         </a>
+
                     </div>
-                    <div class="hero-note">
-                        <span>✓</span>
-                        Built for ambitious students
+
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            <span>Personalized practice</span>
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            <span>Progress tracking</span>
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            <span>AI-powered support</span>
+                        </div>
+
                     </div>
+
                 </div>
+
+
+                <!-- HERO CREATURE ART -->
 
                 <div class="hero-visual">
-                    <div class="hero-soft-circle"></div>
-                    <img src="images/hero-creatures.png" alt="ArianaPrep educational creatures" class="hero-creatures">
+
+                    <div class="hero-visual-glow"></div>
+
+                    <img
+                        src="images/hero-creatures.png"
+                        alt="ArianaPrep educational creatures representing SAT and TOEFL learning"
+                        class="hero-creatures"
+                    >
+
+                    <div class="hero-floating-card hero-floating-card-top">
+
+                        <span class="floating-card-icon">✦</span>
+
+                        <div>
+                            <strong>Study smarter</strong>
+                            <small>One step at a time</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-floating-card hero-floating-card-bottom">
+
+                        <span class="floating-card-check">✓</span>
+
+                        <div>
+                            <strong>Keep improving</strong>
+                            <small>Track your progress</small>
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- =========================
-             TRUST / INTRO
-        ========================== -->
-        <section class="intro-section">
-            <div class="container">
-                <div class="section-heading centered">
-                    <div class="section-label">ONE PLATFORM</div>
-                    <h2>
-                        Everything you need to
-                        <span>prepare confidently.</span>
-                    </h2>
-                    <p>
-                        Whether you're preparing for university admission,
-                        studying abroad, or working toward your next academic
-                        goal, ArianaPrep keeps your preparation organized.
-                    </p>
-                </div>
-            </div>
-        </section>
 
-        <!-- =========================
+        <!-- =================================================
              PROGRAMS
-        ========================== -->
-        <section class="programs-section" id="programs">
-            <div class="container">
+             ================================================= -->
+
+        <section
+            class="programs-section"
+            id="programs"
+        >
+
+            <div class="section-container">
+
                 <div class="section-heading">
-                    <div class="section-label">OUR PROGRAMS</div>
-                    <h2>Choose your <span>path.</span></h2>
-                    <p>Focused preparation for two of the most important exams for students planning to study internationally.</p>
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            YOUR PATH
+                        </span>
+
+                        <h2>
+                            Choose your program.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Focus on the exam that matters
+                        to your next step.
+                    </p>
+
                 </div>
 
-                <div class="program-grid">
+
+                <div class="program-cards">
+
+
                     <!-- SAT -->
-                    <article class="program-card sat-card">
-                        <div class="program-top">
-                            <div class="program-tag">DIGITAL SAT</div>
-                            <div class="program-icon">SAT</div>
+
+                    <article class="program-card sat-program">
+
+                        <div class="program-card-top">
+
+                            <div class="program-mark">
+                                SAT
+                            </div>
+
+                            <span class="program-label">
+                                DIGITAL SAT
+                            </span>
+
                         </div>
-                        <div class="program-image">
-                            <img src="images/sat-creature.png" alt="Digital SAT preparation creature">
-                        </div>
-                        <div class="program-content">
-                            <h3>Digital SAT</h3>
-                            <p>Build stronger Reading & Writing and Math skills with focused lessons, practice, analytics, and AI-powered study support.</p>
-                            <ul class="program-list">
-                                <li><span>✓</span> Reading & Writing</li>
-                                <li><span>✓</span> Math</li>
-                                <li><span>✓</span> Practice & analytics</li>
-                                <li><span>✓</span> AI study support</li>
+
+
+                        <div class="program-card-content">
+
+                            <h3>
+                                Digital SAT
+                            </h3>
+
+                            <p>
+                                Build stronger Reading & Writing
+                                and Math skills with focused
+                                practice and personalized preparation.
+                            </p>
+
+
+                            <ul class="program-features">
+
+                                <li>
+                                    <span>✓</span>
+                                    Reading & Writing
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Math
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Practice & full tests
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Score analytics
+                                </li>
+
                             </ul>
-                            <a href="/register" class="program-button sat-button">
-                                Explore SAT Prep <span>→</span>
+
+
+                            <a
+                                href="/register"
+                                class="program-button sat-button"
+                            >
+                                Prepare for the SAT
+                                <span>→</span>
                             </a>
+
                         </div>
+
+
+                        <div class="program-decoration"></div>
+
+                        <img
+                            src="images/sat-creature.png"
+                            alt=""
+                            class="program-creature"
+                        >
+
                     </article>
+
 
                     <!-- TOEFL -->
-                    <article class="program-card toefl-card">
-                        <div class="program-top">
-                            <div class="program-tag">TOEFL iBT</div>
-                            <div class="program-icon">TOEFL</div>
+
+                    <article class="program-card toefl-program">
+
+                        <div class="program-card-top">
+
+                            <div class="program-mark">
+                                T
+                            </div>
+
+                            <span class="program-label">
+                                TOEFL iBT
+                            </span>
+
                         </div>
-                        <div class="program-image">
-                            <img src="images/toefl-creature.png" alt="TOEFL iBT preparation creature">
+
+
+                        <div class="program-card-content">
+
+                            <h3>
+                                TOEFL iBT
+                            </h3>
+
+                            <p>
+                                Develop the four skills you need
+                                for the TOEFL iBT with structured
+                                practice and guided preparation.
+                            </p>
+
+
+                            <ul class="program-features">
+
+                                <li>
+                                    <span>✓</span>
+                                    Reading
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Listening
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Speaking & Writing
+                                </li>
+
+                                <li>
+                                    <span>✓</span>
+                                    Score analytics
+                                </li>
+
+                            </ul>
+
+
+                            <a
+                                href="/register"
+                                class="program-button toefl-button"
+                            >
+                                Prepare for TOEFL
+                                <span>→</span>
+                            </a>
+
                         </div>
-                        <div class="program-content">
-                            <h3>TOEFL iBT</h3>
-                            <p>Master reading, listening, speaking, and writing modules with realistic timed mock exams and feedback.</p>
-                        </div>
+
+
+                        <div class="program-decoration"></div>
+
+                        <img
+                            src="images/toefl-creature.png"
+                            alt=""
+                            class="program-creature"
+                        >
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
 
+
+        <!-- =================================================
+             HOW IT WORKS
+             ================================================= -->
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-eyebrow">
+                        HOW IT WORKS
+                    </span>
+
+                    <h2>
+                        A clearer way to prepare.
+                    </h2>
+
+                    <p>
+                        ArianaPrep turns preparation into
+                        a structured learning journey.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div class="step-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Choose your goal
+                        </h3>
+
+                        <p>
+                            Select Digital SAT or TOEFL iBT
+                            and build your learning path
+                            around your target.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div class="step-icon">
+                            ◇
+                        </div>
+
+                        <h3>
+                            Practice intentionally
+                        </h3>
+
+                        <p>
+                            Work through focused questions,
+                            practice sessions, and realistic
+                            exam experiences.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div class="step-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Understand your progress
+                        </h3>
+
+                        <p>
+                            Use your analytics and study plan
+                            to understand what is improving
+                            and what needs more attention.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            04
+                        </div>
+
+                        <div class="step-icon">
+                            ★
+                        </div>
+
+                        <h3>
+                            Keep moving forward
+                        </h3>
+
+                        <p>
+                            Learn consistently, get help from
+                            your AI tutor, and stay focused on
+                            your next milestone.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
+
+        <section
+            class="features-section"
+            id="features"
+        >
+
+            <div class="section-container">
+
+                <div class="feature-layout">
+
+                    <div class="feature-intro">
+
+                        <span class="section-eyebrow">
+                            THE ARIANAPREP EXPERIENCE
+                        </span>
+
+                        <h2>
+                            Everything you need
+                            to prepare with clarity.
+                        </h2>
+
+                        <p>
+                            Your preparation should not feel
+                            scattered. ArianaPrep brings your
+                            practice, planning, progress, and
+                            support together.
+                        </p>
+
+                        <a
+                            href="/register"
+                            class="text-button"
+                        >
+                            Create your account
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="feature-grid">
+
+
+                        <article class="feature-card">
+
+                            <div class="feature-icon purple">
+                                ◉
+                            </div>
+
+                            <h3>
+                                Personalized Practice
+                            </h3>
+
+                            <p>
+                                Practice by skill and focus
+                                on the areas where you need
+                                the most improvement.
+                            </p>
+
+                        </article>
+
+
+                        <article class="feature-card">
+
+                            <div class="feature-icon gold">
+                                ✓
+                            </div>
+
+                            <h3>
+                                Study Plans
+                            </h3>
+
+                            <p>
+                                Follow a structured plan that
+                                keeps your preparation organized
+                                and manageable.
+                            </p>
+
+                        </article>
+
+
+                        <article class="feature-card">
+
+                            <div class="feature-icon blue">
+                                ↗
+                            </div>
+
+                            <h3>
+                                Progress Analytics
+                            </h3>
+
+                            <p>
+                                See your performance over time
+                                and identify the skills that
+                                deserve more attention.
+                            </p>
+
+                        </article>
+
+
+                        <article class="feature-card">
+
+                            <div class="feature-icon lavender">
+                                ✦
+                            </div>
+
+                            <h3>
+                                AI Tutor
+                            </h3>
+
+                            <p>
+                                Get explanations, guidance,
+                                and study support whenever
+                                you need another perspective.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
+
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <div class="section-container">
+
+                <div class="about-card">
+
+                    <div class="about-content">
+
+                        <span class="section-eyebrow">
+                            WHY ARIANAPREP
+                        </span>
+
+                        <h2>
+                            Preparation should feel
+                            <span>possible.</span>
+                        </h2>
+
+                        <p>
+                            ArianaPrep is designed around a
+                            simple idea: students learn better
+                            when preparation is clear, focused,
+                            and encouraging.
+                        </p>
+
+                        <p>
+                            Whether you're preparing for the
+                            Digital SAT or TOEFL iBT, your
+                            dashboard gives you one place to
+                            practice, plan, understand your
+                            progress, and keep moving forward.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-stat-area">
+
+                        <div class="about-stat">
+
+                            <strong>
+                                SAT
+                            </strong>
+
+                            <span>
+                                Digital SAT
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-stat">
+
+                            <strong>
+                                TOEFL
+                            </strong>
+
+                            <span>
+                                TOEFL iBT
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-stat">
+
+                            <strong>
+                                AI
+                            </strong>
+
+                            <span>
+                                Learning support
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+             ================================================= -->
+
+        <section class="cta-section">
+
+            <div class="cta-container">
+
+                <div class="cta-decoration cta-decoration-one"></div>
+                <div class="cta-decoration cta-decoration-two"></div>
+
+                <div class="cta-content">
+
+                    <span class="cta-eyebrow">
+                        YOUR NEXT STEP STARTS HERE
+                    </span>
+
+                    <h2>
+                        Ready to start preparing?
+                    </h2>
+
+                    <p>
+                        Create your ArianaPrep account and
+                        start building your preparation plan.
+                    </p>
+
+                    <a
+                        href="/register"
+                        class="cta-button"
+                    >
+                        Get Started
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="/">
+                    <img
+                        src="images/arianaprep-logo.png"
+                        alt="ArianaPrep"
+                    >
+                </a>
+
+                <p>
+                    Digital SAT & TOEFL iBT preparation
+                    built around your progress.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h3>
+                        Programs
+                    </h3>
+
+                    <a href="#programs">
+                        Digital SAT
+                    </a>
+
+                    <a href="#programs">
+                        TOEFL iBT
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Platform
+                    </h3>
+
+                    <a href="#features">
+                        Features
+                    </a>
+
+                    <a href="#how-it-works">
+                        How It Works
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <a href="/login">
+                        Log in
+                    </a>
+
+                    <a href="/register">
+                        Create account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 ArianaPrep
+            </span>
+
+            <span>
+                Digital SAT & TOEFL iBT Preparation
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuButton =
+                document.getElementById("mobileMenuButton");
+
+            const mobileNavigation =
+                document.getElementById("mobileNavigation");
+
+
+            if (menuButton && mobileNavigation) {
+
+                menuButton.addEventListener("click", function () {
+
+                    const isOpen =
+                        menuButton.getAttribute("aria-expanded") === "true";
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        String(!isOpen)
+                    );
+
+
+                    mobileNavigation.classList.toggle(
+                        "open",
+                        !isOpen
+                    );
+
+
+                    mobileNavigation.setAttribute(
+                        "aria-hidden",
+                        String(isOpen)
+                    );
+
+                });
+
+
+                const mobileLinks =
+                    mobileNavigation.querySelectorAll("a");
+
+
+                mobileLinks.forEach(function (link) {
+
+                    link.addEventListener("click", function () {
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        mobileNavigation.classList.remove("open");
+
+                        mobileNavigation.setAttribute(
+                            "aria-hidden",
+                            "true"
+                        );
+
+                    });
+
+                });
+
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>
+```
