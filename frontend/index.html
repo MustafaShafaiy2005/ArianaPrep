@@ -7,12 +7,158 @@
     <!-- Google Search Console Verification Tag -->
     <meta name="google-site-verification" content="a5apJ2iF-7JHBCbOLQ_YykbXS1f9xCWeWZhVwh6sEBQ" />
 
-    <title>ArianaPrep � Digital SAT & TOEFL iBT Preparation</title>
+    <title>ArianaPrep — Digital SAT & TOEFL iBT Preparation</title>
 
     <link rel="stylesheet" href="index.css">
 
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="#home" class="logo">
+                <img src="images/arianaprep-logo.png" alt="ArianaPrep" class="logo-image">
+            </a>
+
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#programs">Programs</a>
+                <a href="#resources">Resources</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/login" class="login-link">Log in</a>
+                <a href="/register" class="header-button">Get Started</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        SMARTER TEST PREPARATION
+                    </div>
+                    <h1>
+                        Prepare with purpose.
+                        <span>Achieve your goal.</span>
+                    </h1>
+                    <p class="hero-description">
+                        ArianaPrep helps students prepare for the Digital SAT
+                        and TOEFL iBT with structured practice, personalized
+                        learning, and AI-powered study support.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/register" class="primary-button">
+                            Start Preparing
+                            <span>→</span>
+                        </a>
+                        <a href="#programs" class="secondary-button">
+                            Explore Programs
+                        </a>
+                    </div>
+                    <div class="hero-note">
+                        <span>✓</span>
+                        Built for ambitious students
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-soft-circle"></div>
+                    <img src="images/hero-creatures.png" alt="ArianaPrep educational creatures" class="hero-creatures">
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             TRUST / INTRO
+        ========================== -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="section-heading centered">
+                    <div class="section-label">ONE PLATFORM</div>
+                    <h2>
+                        Everything you need to
+                        <span>prepare confidently.</span>
+                    </h2>
+                    <p>
+                        Whether you're preparing for university admission,
+                        studying abroad, or working toward your next academic
+                        goal, ArianaPrep keeps your preparation organized.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             PROGRAMS
+        ========================== -->
+        <section class="programs-section" id="programs">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="section-label">OUR PROGRAMS</div>
+                    <h2>Choose your <span>path.</span></h2>
+                    <p>Focused preparation for two of the most important exams for students planning to study internationally.</p>
+                </div>
+
+                <div class="program-grid">
+                    <!-- SAT -->
+                    <article class="program-card sat-card">
+                        <div class="program-top">
+                            <div class="program-tag">DIGITAL SAT</div>
+                            <div class="program-icon">SAT</div>
+                        </div>
+                        <div class="program-image">
+                            <img src="images/sat-creature.png" alt="Digital SAT preparation creature">
+                        </div>
+                        <div class="program-content">
+                            <h3>Digital SAT</h3>
+                            <p>Build stronger Reading & Writing and Math skills with focused lessons, practice, analytics, and AI-powered study support.</p>
+                            <ul class="program-list">
+                                <li><span>✓</span> Reading & Writing</li>
+                                <li><span>✓</span> Math</li>
+                                <li><span>✓</span> Practice & analytics</li>
+                                <li><span>✓</span> AI study support</li>
+                            </ul>
+                            <a href="/register" class="program-button sat-button">
+                                Explore SAT Prep <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- TOEFL -->
+                    <article class="program-card toefl-card">
+                        <div class="program-top">
+                            <div class="program-tag">TOEFL iBT</div>
+                            <div class="program-icon">TOEFL</div>
+                        </div>
+                        <div class="program-image">
+                            <img src="images/toefl-creature.png" alt="TOEFL iBT preparation creature">
+                        </div>
+                        <div class="program-content">
+                            <h3>TOEFL iBT</h3>
+                            <p>Master reading, listening, speaking, and writing modules with realistic timed mock exams and feedback.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
