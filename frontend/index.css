@@ -1,3 +1,4 @@
+```css
 /* =========================================================
    ARIANAPREP — HOMEPAGE
    ========================================================= */
@@ -161,9 +162,11 @@ img {
     flex-shrink: 0;
 }
 
+/* Slightly larger ArianaPrep logo */
 .brand-logo {
-    width: auto;
-    height: 58px;
+    width: 150px;
+    height: auto;
+    display: block;
 }
 
 .main-navigation {
@@ -1028,9 +1031,10 @@ img {
     padding: 70px 0;
 }
 
+/* Slightly larger footer logo */
 .footer-brand img {
-    width: auto;
-    height: 58px;
+    width: 145px;
+    height: auto;
     margin-bottom: 18px;
 }
 
@@ -1071,12 +1075,19 @@ img {
 
 .footer-bottom {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
     padding: 20px max(24px, calc((100% - 1180px) / 2));
     border-top: 1px solid rgba(255, 255, 255, .09);
     color: rgba(255, 255, 255, .45);
     font-size: .75rem;
+}
+
+.footer-bottom span:nth-child(2) {
+    color: rgba(255, 255, 255, .58);
+    font-weight: 600;
 }
 
 
@@ -1260,7 +1271,8 @@ img {
     }
 
     .brand-logo {
-        height: 52px;
+        width: 135px;
+        height: auto;
     }
 
     .hero {
@@ -1391,6 +1403,10 @@ img {
         padding: 55px 0;
     }
 
+    .footer-brand img {
+        width: 135px;
+    }
+
     .footer-links {
         grid-template-columns: 1fr 1fr;
         gap: 30px 20px;
@@ -1402,8 +1418,10 @@ img {
 
     .footer-bottom {
         flex-direction: column;
+        justify-content: center;
         padding: 18px 14px;
         gap: 5px;
+        text-align: center;
     }
 
 }
@@ -1412,7 +1430,7 @@ img {
 @media (max-width: 390px) {
 
     .brand-logo {
-        height: 48px;
+        width: 125px;
     }
 
     .hero h1 {
@@ -1436,3 +1454,4 @@ img {
     }
 
 }
+```
